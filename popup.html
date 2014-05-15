@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <title>ODesk Watcher</title>
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen">
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body style="width:460px; height:601px;">
+
+<div id="container">
+    <div id="list-wrap">
+        <div class="head shadow">
+            <h1><a href="http://talks.2rba.com/category/development/odesk-watcher" target="_blank">ODesk Watcher</a></h1>
+            <p>
+                <!--<a href="#">View ALL fun</a> &middot; -->
+                <a id="clear-btn" class="button" href="javascript:void(0);">Mark ALL as read</a>
+            </p>
+        </div><!--end #head-->
+        <ul class="post-list bar-1" id="entry_wrapper">
+        </ul>
+        <div class="button-container">
+            <a id="show-more-button" class="button is-end" target="_blank" href="options.html">Options</a>
+        </div><!--end .button-container-->
+
+    </div><!--end div#list-wrap-->
+
+    <div id="full-wrap" style="display:none;">
+        <div class="head" style="width:460px;">
+            <a id="back-btn" class="button back" href="javascript:void(0);">&#8249; Go back</a>
+            <p>
+                <a id="prev-btn" class="button badge-prev-btn" href="javascript:void(0);">&#8249; Prev post</a>
+                <a id="next-btn" class="button badge-next-btn" href="javascript:void(0);">Next post &#8250;</a>
+            </p>
+        </div>
+
+        <ul class="spread-bar shadow">
+            <li>
+                <a class="facebook-share-button badge-share-button badge-facebook-button" href="javascript:void(0);"><span id="content-facebook-count">0</span><span class="end"></span></a>
+            </li>
+            <li>
+                <a class="twitter-tweet-button badge-share-button badge-twitter-button" href="javascript:void(0);"><span id="content-twitter-count">0</span><span class="end"></span></a>
+            </li>
+            <li>
+                <a id="content-email-share" class="email-button" href="#">Email</a>
+            </li>
+            <li>
+                <div id="content-gplus-share"></div>
+            </li>
+            <li>
+                <iframe id="content-fb-like-iframe" src="about:blank" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:90px;" allowTransparency="true"></iframe>
+            </li>
+        </ul>
+
+        <div class="bar-2">
+            <a id="content-title-link" href="javascript:void(0);"><h3 id="content-title"></h3></a>
+        </div>
+
+        <div id="content-img-container" class="full-post-container">
+        </div>
+
+        <div class="post-info">
+            <p class="basic">
+                <span id="content-created">&nbsp;</span> &middot;
+                <span id="content-views">0</span> points
+            </p>
+            <a id="see-comments" class="button" href="javascript:void(0);">See comments</a>
+        </div><!--end .post-info-->
+
+
+        <div class="temp" style="display:none;"></div>
+    </div><!--end div#full-wrap-->
+    <div id="feedback-flag">
+        <a id="feedback-button" href="javascript:void(0)">Feedback</a>
+    </div>
+
+</div><!--end div#container-->
+
+<script src="js/popup.js"></script>
+</body>
+</html>
