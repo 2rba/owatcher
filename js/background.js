@@ -1,7 +1,7 @@
-function checkSites(){
+var query_list;
+function checkQuery(query){
+    query = query.trim();
     var list = JSON.parse(localStorage.getItem("list"));
-    var query = localStorage.getItem("query");
-    if (!query) query="";
     $.get('https://www.odesk.com/o/jobs/browse/?q='+query,function(data){
         $(data).find('li article').each(function(index,em){
             var $em=$(em);
@@ -15,7 +15,7 @@ function checkSites(){
                 }
             }
             if (!found){
-                list.unshift({id: id, href: link.attr('href'), title: link.html(), description: $em.find('.oJobDescription').html().trim()})
+                list.unshift({id: id, query: query, href: link.attr('href'), title: link.html(), description: $em.find('.oJobDescription').html().trim()})
             }
 
 
@@ -23,7 +23,18 @@ function checkSites(){
         list = list.slice(0,100);
         localStorage.setItem("list",JSON.stringify(list));
         setBadge(list);
+        if (query_list.length > 0){
+            checkQuery(query_list.shift());
+        }
     });
+}
+
+
+function checkSites(){
+    var query = localStorage.getItem("query");
+    if (!query) query="";
+    query_list=query.split(',');
+    checkQuery(query_list.shift());
 }
 
 if (!localStorage.getItem("list")) localStorage.setItem("list",JSON.stringify([]));

@@ -3,7 +3,7 @@ var html = '';
 for (var i in list){
     var entry = list[i];
     if (!entry.seen)
-        html+='<li class="entry"><a data-id="'+entry.id+'" href="https://www.odesk.com'+entry.href.slice(2)+'" class="cell-wrap entry-link"><div class="img-wrap"></div><div class="info-wrap"><h3>'+entry.title+'</h3><p>'+entry.description+'</p></div></a></li>';
+        html+='<li class="entry"><a title="'+entry.description.replace('"','')+'" data-id="'+entry.id+'" href="https://www.odesk.com'+entry.href.slice(2)+'" class="cell-wrap entry-link"><div class="img-wrap"></div><div class="info-wrap"><h3>'+entry.title+'</h3><p style="color: '+getColor(entry.query)+'">'+entry.query+'</p></div></a></li>';
 }
 $('#entry_wrapper').html(html);
 $('#entry_wrapper').on('click','a',function(e){
