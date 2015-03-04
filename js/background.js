@@ -43,7 +43,7 @@ function checkQuery(query){
 
 
         });
-        list = toadd.concat(list).slice(0,100);
+        list = toadd.concat(list).slice(0,500);
         localStorage.setItem("list",JSON.stringify(list));
         setBadge(list);
         if (query_list.length > 0){
